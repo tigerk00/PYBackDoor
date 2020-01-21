@@ -1,3 +1,4 @@
+#Импорт необходимых библиотек 
 # -*- coding: utf-8 -*-
 import sqlite3, win32crypt
 import os
@@ -7,7 +8,6 @@ import shutil
 import winreg
 import getpass
 import telepot
-#Импорт необходимых библиотек 
 import requests
 import win32api
 import winshell
