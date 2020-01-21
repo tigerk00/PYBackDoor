@@ -1,5 +1,6 @@
-#Импорт необходимых библиотек 
+
 # -*- coding: utf-8 -*-
+#Импорт необходимых библиотек
 import sqlite3, win32crypt
 import os
 import sys
